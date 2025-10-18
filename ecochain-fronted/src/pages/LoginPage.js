@@ -1,23 +1,26 @@
 import React from 'react';
-// 1. Importe 'useNavigate' junto com o 'Link'
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/AuthForm.css';
 import Button from '../ui/Button';
+import { FaArrowLeft } from 'react-icons/fa'; // Ícone para o botão de voltar
 
 function LoginPage() {
-  // 2. Inicialize o hook para podermos usá-lo
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     alert('Login simulado com sucesso! Redirecionando...');
-    
-    // 3. Substitua o alerta antigo por esta linha que redireciona o usuário
-    navigate('/dashboard'); 
+    navigate('/dashboard');
   };
 
   return (
     <div className="auth-container">
+      {/* --- BOTÃO DE VOLTAR ADICIONADO AQUI --- */}
+      <Link to="/" className="back-to-home">
+        <FaArrowLeft />
+        <span>Voltar ao Início</span>
+      </Link>
+
       <div className="auth-card">
         <div className="auth-logo">
           <div className="logo-icon">E</div>

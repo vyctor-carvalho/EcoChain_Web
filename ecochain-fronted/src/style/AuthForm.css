@@ -3,21 +3,59 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #f8fafc;
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   padding: 24px;
+
+  
+  background-image: url('../assets/background_login.jpg');
+  background-size: cover;
+  /* --- A MUDANÇA ESTÁ AQUI --- */
+  /* Força o alinhamento da imagem pela borda direita */
+  background-position: right center;
+  position: relative;
+}
+
+/* --- Camada escura sobre a imagem --- */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(17, 24, 39, 0.5);
 }
 
 .auth-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 48px;
   border-radius: 16px;
-  /* A MUDANÇA ESTÁ AQUI: Sombra mais forte e espalhada */
-  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.25); 
-  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
   max-width: 450px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ... O restante do seu CSS continua igual ... */
+
+.back-to-home {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.back-to-home:hover {
+  opacity: 0.8;
 }
 
 .auth-logo {
