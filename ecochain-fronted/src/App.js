@@ -1,41 +1,71 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/layout/Header';
-import Button from './components/common/Button';
+
+// Componentes da Página Inicial (agora em /src/components/)
+import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import ValuesSection from './components/ValuesSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import TechnologySection from './components/TechnologySection';
+import ComparisonSection from './components/ComparisonSection';
+import BenefitsSection from './components/BenefitsSection';
+import PartnersSection from './components/PartnersSection';
+
+// Componentes de UI (agora em /src/components/)
+import Header from './ui/Header';
+import Footer from './ui/Footer';
+
+// Páginas
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage';
+import DashboardHomePage from './pages/DashboardHomePage';
+import DashboardProfilePage from './pages/DashboardProfilePage';
+
+
+// Componente que junta as seções da Página Inicial
+function HomePage() {
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ValuesSection />
+      <HowItWorksSection />
+      <TechnologySection />
+      <ComparisonSection />
+      <BenefitsSection />
+      <PartnersSection />
+    </>
+  );
+}
 
 function App() {
-  const testButton = () => {
-    alert('Botão de teste clicado!');
-  };
-
   return (
-    <div className="App">
-      <Header />
-      
-      {/* Espaço para compensar o header fixo */}
-      <div style={{ marginTop: '100px', padding: '20px' }}>
-        <h1>EcoChain - Teste dos Componentes</h1>
-        
-        <div style={{ marginTop: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-          <Button onClick={testButton}>
-            Botão Primário
-          </Button>
-          
-          <Button type="outline" onClick={testButton}>
-            Botão Outline
-          </Button>
-          
-          <Button size="large" onClick={testButton}>
-            Botão Grande
-          </Button>
-        </div>
-        
-        <p style={{ marginTop: '20px' }}>
-          Se você vê o cabeçalho e os botões funcionando, está tudo certo!
-        </p>
-        
-        <p><strong>Teste:</strong> Diminua a tela para ver o menu responsivo!</p>
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        {/* Rota da Página Inicial (renderiza com Header e Footer) */}
+        <Route path="/" element={
+          <>
+            <Header />
+            <main><HomePage /></main>
+            <Footer />
+          </>
+        } />
+
+        {/* Rotas de Autenticação (sem Header e Footer) */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/cadastro" element={<RegisterPage />} />
+
+        {/* Rota do Dashboard (usa DashboardPage como layout) */}
+        <Route path="/dashboard" element={<DashboardPage />}>
+          {/* Sub-rotas que serão renderizadas dentro do <Outlet> */}
+          <Route index element={<DashboardHomePage />} />
+          <Route path="perfil" element={<DashboardProfilePage />} />
+          {/* <Route path="configuracoes" element={<... />} /> */}
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,0 +1,11 @@
+.dashboard-layout {
+  display: flex;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 40px;
+  margin-left: 260px; /* Mesma largura da sidebar para não sobrepor */
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
