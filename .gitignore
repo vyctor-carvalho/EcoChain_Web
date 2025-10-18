@@ -1,11 +1,9 @@
 # Dependências
-/node_modules/
-/ecochain-fronted/node_modules/
-/eco-chain_backend/node_modules/
+node_modules/
 
 # Arquivos de Build
-/dist/
-/build/
+dist/
+build/
 
 # Logs
 npm-debug.log*

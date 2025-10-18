@@ -31,11 +31,11 @@ export class AuthLoginService {
     const [access_token, refresh_token] = await Promise.all([
       this.jwtService.signAsync(payload, {
         secret: this.configService.get<string>('JWT_SECRET'),
-        expiresIn: this.configService.get<string>('JWT_EXPIRES_IN'),
+        expiresIn: this.configService.get('JWT_EXPIRES_IN'),
       }),
       this.jwtService.signAsync(payload, {
         secret: this.configService.get<string>('REFRESH_SECRET'),
-        expiresIn: this.configService.get<string>('REFRESH_TOKEN_EXPIRES_IN'),
+        expiresIn: this.configService.get('REFRESH_TOKEN_EXPIRES_IN'),
       }),
     ]);
     await this.enterpriseService.setCurrentRefreshToken(refresh_token, user.id);
