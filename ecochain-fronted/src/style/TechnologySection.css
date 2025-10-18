@@ -1,0 +1,93 @@
+.technology-section {
+  padding: 80px 32px;
+  text-align: center;
+  background-color: #f8fafc;
+}
+
+.technology-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== INÍCIO DA MUDANÇA IMPORTANTE ===== */
+
+.tech-grid {
+  display: flex; /* MUDADO de 'grid' para 'flex' */
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+  justify-content: center; /* Centraliza os cards */
+  gap: 32px;
+  margin-top: 64px;
+}
+
+/* ===== FIM DA MUDANÇA IMPORTANTE ===== */
+
+.tech-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 350px; /* Definindo uma largura base para os cards */
+  max-width: 100%;
+}
+
+.tech-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+/* AQUI ESTÁ A CORREÇÃO: Aplicando a cor diretamente no ícone SVG */
+.tech-icon-wrapper svg {
+  color: white;
+  font-size: 28px;
+}
+
+/* Cores dos ícones */
+.icon-purple { background-color: #8b5cf6; }
+.icon-green { background-color: #22c55e; }
+.icon-blue { background-color: #3b82f6; }
+
+
+.tech-card-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.tech-card-description {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Esta linha é importante para empurrar a lista para baixo */
+}
+
+.tech-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.check-icon {
+  color: #16a34a;
+  margin-top: 4px;
+  flex-shrink: 0;
+}

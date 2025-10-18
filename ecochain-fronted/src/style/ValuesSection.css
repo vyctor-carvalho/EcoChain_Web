@@ -1,0 +1,94 @@
+.values-section {
+  padding: 80px 32px;
+  text-align: center;
+  background-color: #f8fafc; /* Um fundo bem clarinho para diferenciar */
+}
+
+.values-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 64px; /* Espaço maior abaixo do título */
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  justify-items: center;
+}
+
+.value-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Regra mais específica para garantir que o ícone (SVG) seja branco */
+.value-icon-wrapper svg {
+  color: white;
+  font-size: 32px;
+}
+
+/* Cores de fundo */
+.icon-green { background-color: #22c55e; }
+.icon-blue { background-color: #3b82f6; }
+.icon-purple { background-color: #8b5cf6; }
+
+
+.value-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.value-description {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 1 ou 2 colunas */
+  }
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values-grid {
+    grid-template-columns: 1fr; /* Apenas 1 coluna em telas muito pequenas */
+  }
+}
