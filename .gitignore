@@ -1,0 +1,17 @@
+# Dependências
+/node_modules/
+/ecochain-fronted/node_modules/
+/eco-chain_backend/node_modules/
+
+# Arquivos de Build
+/dist/
+/build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de ambiente
+.env
+.env.local
