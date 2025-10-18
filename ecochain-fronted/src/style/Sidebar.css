@@ -1,67 +1,19 @@
-.sidebar {
-  width: 260px;
-  background-color: #111827;
-  color: #d1d5db;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 24px;
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 1px solid #374151;
-}
-
-.sidebar-header .logo-icon {
-  background: #16a34a;
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-}
-
-.sidebar-nav {
-  flex-grow: 1;
-  padding: 16px 0;
-}
-
-.sidebar-nav a {
+.logout-button {
+  background: none;
+  border: none;
+  color: #9ca3af;
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 100%;
   padding: 12px 24px;
-  color: #d1d5db;
-  text-decoration: none;
+  font-size: 16px;
   font-weight: 500;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s ease;
 }
 
-.sidebar-nav a:hover {
-  background-color: #374151;
-}
-
-/* Estilo que o NavLink aplica automaticamente para o link ativo */
-.sidebar-nav a.active {
-  background-color: #16a34a;
+.logout-button:hover {
   color: white;
-}
-
-.sidebar-footer {
-  padding: 24px;
-  text-align: center;
-  font-size: 12px;
-  color: #6b7280;
-  border-top: 1px solid #374151;
 }

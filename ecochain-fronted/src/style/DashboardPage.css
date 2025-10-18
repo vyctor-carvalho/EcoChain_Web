@@ -3,9 +3,18 @@
 }
 
 .dashboard-content {
-  flex-grow: 1;
+  flex-grow: 1; /* Faz o conteúdo ocupar o resto da tela */
   padding: 40px;
-  margin-left: 260px; /* Mesma largura da sidebar para não sobrepor */
   min-height: 100vh;
   background-color: #f8fafc;
+
+  /* ESTA É A CORREÇÃO: Cria um espaço para a sidebar */
+  margin-left: 260px; 
+}
+
+/* Estilos para os títulos */
+.dashboard-content h1 {
+    font-size: 32px;
+    color: #1f2739;
+    margin-bottom: 16px;
 }

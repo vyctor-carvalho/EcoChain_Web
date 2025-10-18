@@ -28,11 +28,10 @@ function Header() {
           <a href="/#how-it-works">Como Funciona</a>
           <a href="/#benefits">Benefícios</a>
           <a href="/#partners">Parcerias</a>
-          {/* O link de Contato ainda não tem uma seção, vamos remover por agora */}
-          {/* <a href="/#contact">Contato</a> */}
+          
         </nav>
 
-        {/* Botões do Header agora usam Link */}
+        
         <div className="header-buttons">
           <Link to="/login">
             <Button type="outline" size="small">Entrar</Button>
@@ -58,7 +57,7 @@ function Header() {
           <a href="/#how-it-works">Como Funciona</a>
           <a href="/#benefits">Benefícios</a>
           <a href="/#partners">Parcerias</a>
-          {/* <a href="/#contact">Contato</a> */}
+          
         </div>
       )}
     </header>

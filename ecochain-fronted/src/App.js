@@ -2,7 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Componentes da Página Inicial (agora em /src/components/)
+// Componente de Proteção
+import ProtectedRoute from './components/ProtectedRoute';
+
+// Componentes da UI
+import Header from './ui/Header';
+import Footer from './ui/Footer';
+
+// Seções da Página Inicial
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ValuesSection from './components/ValuesSection';
@@ -12,19 +19,18 @@ import ComparisonSection from './components/ComparisonSection';
 import BenefitsSection from './components/BenefitsSection';
 import PartnersSection from './components/PartnersSection';
 
-// Componentes de UI (agora em /src/components/)
-import Header from './ui/Header';
-import Footer from './ui/Footer';
-
-// Páginas
+// Páginas Públicas
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+
+// Layout e Páginas do Dashboard
 import DashboardPage from './pages/DashboardPage';
-import DashboardHomePage from './pages/DashboardHomePage';
-import DashboardProfilePage from './pages/DashboardProfilePage';
+import DashboardHomePage from './pages/dashboard/DashboardHomePage';
+import ProfilePage from './pages/DashboardProfilePage';
+import ProcessCertificationPage from './pages/dashboard/ProcessCertificationPage';
+import CertificatePage from './pages/dashboard/CertificatePage';
+import SettingsPage from './pages/dashboard/SettingsPage';
 
-
-// Componente que junta as seções da Página Inicial
 function HomePage() {
   return (
     <>
@@ -44,7 +50,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Rota da Página Inicial (renderiza com Header e Footer) */}
+        {/* Rotas Públicas */}
         <Route path="/" element={
           <>
             <Header />
@@ -52,17 +58,18 @@ function App() {
             <Footer />
           </>
         } />
-
-        {/* Rotas de Autenticação (sem Header e Footer) */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/cadastro" element={<RegisterPage />} />
 
-        {/* Rota do Dashboard (usa DashboardPage como layout) */}
-        <Route path="/dashboard" element={<DashboardPage />}>
-          {/* Sub-rotas que serão renderizadas dentro do <Outlet> */}
-          <Route index element={<DashboardHomePage />} />
-          <Route path="perfil" element={<DashboardProfilePage />} />
-          {/* <Route path="configuracoes" element={<... />} /> */}
+        {/* Rotas Protegidas */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<DashboardPage />}>
+            <Route index element={<DashboardHomePage />} />
+            <Route path="processo" element={<ProcessCertificationPage />} />
+            <Route path="certificado" element={<CertificatePage />} />
+            <Route path="perfil" element={<ProfilePage />} />
+            <Route path="configuracoes" element={<SettingsPage />} />
+          </Route>
         </Route>
       </Routes>
     </Router>

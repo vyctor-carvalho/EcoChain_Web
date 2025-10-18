@@ -1,11 +1,10 @@
 .header {
-  position: fixed;
+  background-color: white;
+  padding: 16px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  z-index: 50;
 }
 
 .header-content {
@@ -14,15 +13,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 32px;
 }
+
+.logo-link {
+  text-decoration: none;
+}
+
 
 .logo {
   display: flex;
   align-items: center;
   font-size: 24px;
   font-weight: bold;
-  color: #16a34a;
+  color: #1f2937;
 }
 
 .logo-icon {
@@ -45,9 +48,9 @@
 
 .desktop-nav a {
   text-decoration: none;
-  color: #333;
+  color: #4b5563;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .desktop-nav a:hover {
@@ -60,48 +63,49 @@
 }
 
 .mobile-menu-btn {
-  display: none;
+  display: none; /* Escondido em telas grandes */
   background: none;
   border: none;
-  flex-direction: column;
   cursor: pointer;
-  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .hamburger-line {
   width: 25px;
   height: 3px;
-  background: #333;
-  margin: 3px 0;
-  transition: 0.3s;
+  background-color: #1f2937;
+  border-radius: 3px;
 }
 
 .mobile-menu {
-  background: white;
-  border-top: 1px solid #eee;
-  padding: 16px 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: none;
 }
 
-.mobile-menu a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px 0;
-}
 
-/* Responsivo para mobile */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+  .desktop-nav, .header-buttons {
+      display: none;
   }
-  
-  .header-buttons {
-    display: none;
-  }
-  
   .mobile-menu-btn {
-    display: flex;
+      display: flex;
+  }
+  .mobile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 32px;
+      background-color: white;
+      border-top: 1px solid #e5e7eb;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+  }
+  .mobile-menu a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 500;
   }
 }
