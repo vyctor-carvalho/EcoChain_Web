@@ -52,10 +52,14 @@
   font-weight: 500;
   z-index: 2;
   transition: opacity 0.3s ease;
+  border-radius: 20px;
+  padding: 8px 12px;
 }
 
 .back-to-home:hover {
+  background-color: #819488;
   opacity: 0.8;
+  color: rgb(29, 92, 21);
 }
 
 .auth-logo {

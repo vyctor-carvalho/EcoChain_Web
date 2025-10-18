@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../style/AuthForm.css';
 import Button from '../ui/Button';
-import { FaArrowLeft } from 'react-icons/fa'; // Ícone para o botão de voltar
+import { FaArrowLeft } from 'react-icons/fa';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ function LoginPage() {
 
   return (
     <div className="auth-container">
-      {/* --- BOTÃO DE VOLTAR ADICIONADO AQUI --- */}
       <Link to="/" className="back-to-home">
         <FaArrowLeft />
         <span>Voltar ao Início</span>
