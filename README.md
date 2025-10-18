@@ -33,5 +33,11 @@
         <sub><b>Paulo de Tarso</b></sub>
       </a>
     </td>
+    <td align="center">
+      <a href="https://github.com/Diogolobato91">
+        <img src="https://github.com/Diogolobato91.png?size=100" width="50px;" alt="Foto do Diogo Lobato no GitHub"/><br>
+        <sub><b>Diogo Lobato</b></sub>
+      </a>
+    </td>
   </tr>
 </table>

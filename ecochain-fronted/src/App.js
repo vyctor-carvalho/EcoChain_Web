@@ -1,41 +1,64 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/layout/Header';
-import Button from './components/common/Button';
 
-function App() {
-  const testButton = () => {
-    alert('Botão de teste clicado!');
-  };
+// Layout
+import Header from './ui/Header';
+import Footer from './ui/Footer';
 
+// Seções da Página Inicial
+import HeroSection from './components/HeroSection';
+import AboutSection from './components/AboutSection';
+import ValuesSection from './components/ValuesSection';
+import HowItWorksSection from './components/HowItWorksSection';
+import TechnologySection from './components/TechnologySection';
+import ComparisonSection from './components/ComparisonSection';
+import BenefitsSection from './components/BenefitsSection';
+import PartnersSection from './components/PartnersSection';
+
+// Novas Páginas
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+
+// Componente que agrupa as seções da página inicial
+function HomePage() {
   return (
-    <div className="App">
-      <Header />
-      
-      {/* Espaço para compensar o header fixo */}
-      <div style={{ marginTop: '100px', padding: '20px' }}>
-        <h1>EcoChain - Teste dos Componentes</h1>
-        
-        <div style={{ marginTop: '20px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-          <Button onClick={testButton}>
-            Botão Primário
-          </Button>
-          
-          <Button type="outline" onClick={testButton}>
-            Botão Outline
-          </Button>
-          
-          <Button size="large" onClick={testButton}>
-            Botão Grande
-          </Button>
-        </div>
-        
-        <p style={{ marginTop: '20px' }}>
-          Se você vê o cabeçalho e os botões funcionando, está tudo certo!
-        </p>
-        
-        <p><strong>Teste:</strong> Diminua a tela para ver o menu responsivo!</p>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ValuesSection />
+      <HowItWorksSection />
+      <TechnologySection />
+      <ComparisonSection />
+      <BenefitsSection />
+      <PartnersSection />
+    </>
+  );
+}
+
+// Componente principal que gerencia as rotas
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Rotas para Login e Cadastro (não mostram Header nem Footer) */}
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/cadastro" element={<RegisterPage />} />
+
+          {/* Rota principal que mostra a Página Inicial completa */}
+          <Route path="/*" element={
+            <>
+              <Header />
+              <main>
+                <HomePage />
+              </main>
+              <Footer />
+            </>
+          } />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

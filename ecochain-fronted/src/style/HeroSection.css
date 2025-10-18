@@ -1,0 +1,109 @@
+.hero-section {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  min-height: 100vh;
+  padding: 120px 32px 60px 32px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-badge {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-title .highlight {
+  color: #a7f3d0;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  max-width: 600px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  border-radius: 12px;
+  width: 210px; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 36px; /* Tamanho do ícone */
+  margin-bottom: 16px; /* Espaço abaixo do ícone */
+  color: #a7f3d0; /* Uma cor verde clara para os ícones */
+  display: flex; /* Garante que o ícone esteja centralizado */
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Garante um tamanho de área para o ícone */
+  height: 50px;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2; 
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+  }
+}

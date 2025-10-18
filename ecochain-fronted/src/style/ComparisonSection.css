@@ -1,0 +1,88 @@
+.comparison-section {
+  padding: 80px 32px;
+  background-color: #f8fafc;
+}
+
+.comparison-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título e subtítulo já foram estilizados em outros componentes, 
+   mas vamos garantir que eles estejam aqui para consistência. */
+.comparison-section .section-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.comparison-section .section-subtitle {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto 48px auto;
+}
+
+.comparison-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.table-wrapper {
+  overflow-x: auto; /* Adiciona scroll horizontal em telas pequenas */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #f3f4f6; /* Linha cinza clara entre as linhas */
+}
+
+thead th {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+th.nft-traditional {
+  color: #ef4444; /* Vermelho */
+}
+
+th.vc-sbt {
+  color: #22c55e; /* Verde */
+}
+
+tbody td {
+  color: #374151;
+  font-size: 16px;
+}
+
+/* O primeiro td (Característica) tem peso de fonte maior */
+tbody td:first-child {
+  font-weight: 500;
+}
+
+.cell-content {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.icon-red {
+  color: #ef4444;
+  font-size: 20px;
+}
+
+.icon-green {
+  color: #22c55e;
+  font-size: 20px;
+}

@@ -1,5 +1,6 @@
-import Button from '../common/Button';
-import './HeroSection.css';
+import Button from '../ui/Button';
+import '../style/HeroSection.css';
+import { FaShieldAlt, FaBolt, FaGlobeAmericas } from 'react-icons/fa'; 
 
 function HeroSection() {
   const handleLearnMore = () => {
@@ -11,24 +12,20 @@ function HeroSection() {
   };
 
   return (
-    <section className="hero-section">
+    <section id="home" className="hero-section">
       <div className="hero-content">
-        {/* Badge */}
         <div className="hero-badge">
           🌱 COP 30 Belém 2025 • Blockchain para Sustentabilidade
         </div>
 
-        {/* Main Title */}
         <h1 className="hero-title">
           EcoChain – <span className="highlight">Certificação Sustentável</span> baseada em Blockchain
         </h1>
 
-        {/* Subtitle */}
         <p className="hero-subtitle">
           Transparência e confiança para a bioeconomia amazônica
         </p>
 
-        {/* Hero Buttons */}
         <div className="hero-buttons">
           <Button size="large" onClick={handleLearnMore}>
             Saiba Mais
@@ -38,22 +35,24 @@ function HeroSection() {
           </Button>
         </div>
 
-        {/* Stats */}
         <div className="hero-stats">
           <div className="stat-card">
-            <div className="stat-icon">🛡️</div>
+            <div className="stat-icon"><FaShieldAlt /></div>
             <div className="stat-number">100%</div>
             <div className="stat-label">Transparente</div>
           </div>
           <div className="stat-card">
-            <div className="stat-icon">⚡</div>
+            <div className="stat-icon"><FaBolt /></div>
             <div className="stat-number">95%</div>
             <div className="stat-label">Economia de Energia</div>
           </div>
+          {/* ===== A CORREÇÃO ESTÁ AQUI ===== */}
           <div className="stat-card">
-            <div className="stat-icon">🌐</div>
-            <div className="stat-number">24/7</div>
-            <div className="stat-label">Verificação Contínua</div>
+            <div className="stat-icon"><FaGlobeAmericas /></div>
+            <div className="stat-number">24 / 7</div> {/* Título curto e direto */}
+            <div className="stat-label">
+              Verificação contínua <br /> 24 horas por dia
+            </div> 
           </div>
         </div>
       </div>
