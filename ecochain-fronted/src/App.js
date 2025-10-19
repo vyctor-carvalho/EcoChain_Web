@@ -26,7 +26,7 @@ import RegisterPage from './pages/RegisterPage';
 // Layout e Páginas do Dashboard
 import DashboardPage from './pages/DashboardPage';
 import DashboardHomePage from './pages/dashboard/DashboardHomePage';
-import ProfilePage from './pages/DashboardProfilePage';
+import ProfilePage from './pages/dashboard/DashboardProfilePage';
 import ProcessCertificationPage from './pages/dashboard/ProcessCertificationPage';
 import CertificatePage from './pages/dashboard/CertificatePage';
 import SettingsPage from './pages/dashboard/SettingsPage';
