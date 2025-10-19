@@ -7,11 +7,13 @@ import { JwtModule } from '@nestjs/jwt';
 import { LocalStrategy } from './strategies/local.strategy';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { JwtRefreshStrategy } from './strategies/jwt-refresh.strategy';
+import { EmployeeModule } from 'src/employee/employee.module';
 
 @Module({
   imports: [
     EnterpriseModule,
     PassportModule,
+    EmployeeModule,
     JwtModule.register({}),
   ], 
   controllers: [AuthLoginController],

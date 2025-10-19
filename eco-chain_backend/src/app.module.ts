@@ -6,6 +6,7 @@ import { EnterpriseModule } from './enterprise/enterprise.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './database/data-source';
 import { AuthLoginModule } from './auth-login/auth-login.module';
+import { EmployeeModule } from './employee/employee.module';
 
 console.log('Database Config:',)
 @Module({
@@ -27,7 +28,8 @@ console.log('Database Config:',)
       }
     }),
     EnterpriseModule,
-    AuthLoginModule
+    AuthLoginModule,
+    EmployeeModule
   ],
   controllers: [AppController],
   providers: [AppService],
