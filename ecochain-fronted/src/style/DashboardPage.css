@@ -1,20 +1,25 @@
+/* src/style/DashboardPage.css */
+
+/* O .dashboard-layout serve apenas como um container geral */
 .dashboard-layout {
-  display: flex;
+  position: relative;
 }
 
 .dashboard-content {
-  flex-grow: 1; /* Faz o conteúdo ocupar o resto da tela */
-  padding: 40px;
+  /* --- Posicionamento e Espaçamento --- */
+  margin-left: 260px; /* Cria o espaço para a sidebar fixa. DEVE ser igual à largura da sidebar */
+  
+  /* --- Tema Floresta Clara --- */
+  background-color: #f4f9f4; /* Fundo verde muito claro e suave */
   min-height: 100vh;
-  background-color: #f8fafc;
-
-  /* ESTA É A CORREÇÃO: Cria um espaço para a sidebar */
-  margin-left: 260px; 
+  
+  /* --- Layout Interno --- */
+  padding: 40px;
 }
 
-/* Estilos para os títulos */
 .dashboard-content h1 {
-    font-size: 32px;
-    color: #1f2739;
-    margin-bottom: 16px;
+  font-size: 32px;
+  color: #064e3b; /* Título em verde escuro para combinar com o tema */
+  margin-bottom: 16px;
+  font-weight: 700;
 }
