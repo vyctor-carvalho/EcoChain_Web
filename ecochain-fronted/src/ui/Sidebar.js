@@ -7,9 +7,7 @@ function Sidebar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Remove o token do localStorage
     localStorage.removeItem('access_token');
-    // Redireciona para a página de login
     navigate('/login');
   };
 
